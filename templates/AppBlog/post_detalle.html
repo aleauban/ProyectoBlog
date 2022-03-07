@@ -1,0 +1,33 @@
+{% extends "AppBlog/padre.html" %} 
+
+{% load static %}
+
+{% block ContenidoQueCambia %}
+
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="site-heading">
+                        <h1>Detalles</h1>
+                        <span class="subheading">Más datos para ayudarte a elegir</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <p>&nbsp; Raza: {{post.raza}}</p>
+    <p>&nbsp; Cualidad: {{post.cualidad}}</p>
+    <p>&nbsp; Descripción: {{post.descripcion}}</p>
+    <p>&nbsp; Autor: {{post.autor}}</p>
+    <p>&nbsp; Fecha Post: {{post.fecha}}</p>
+    <p><img src="{{post.imagen.url}}"></p>
+    <p><img src="{{post.imagen1.url}}"></p>
+    <p><img src="{{post.imagen2.url}}"></p>
+
+        <a href="{% url 'Post/List' %}">Regresar</a>
+    </p>
+
+{% endblock ContenidoQueCambia %}

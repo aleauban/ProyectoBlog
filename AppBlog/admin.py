@@ -1,11 +1,16 @@
 from django.contrib import admin
 
-from AppBlog.models import Blog
+from AppBlog.models import Post
 
 # Register your models here.
 
-class BlogAdmin(admin.ModelAdmin):
-    list_display=("titulo","autor","fecha")
-    search_fields=("titulo","autor","fecha")
+# Se agrega en Panel Administrador visualizar los campos titulo, autor y fecha, 
+# poder buscar registros con estos campos y filtrar por fecha.
 
-admin.site.register(Blog, BlogAdmin)
+class PostAdmin(admin.ModelAdmin):
+    list_display=("raza","autor","fecha")
+    search_fields=("raza","autor","fecha")
+    list_filter= ("fecha",)
+    date_hierarchy="fecha"
+
+admin.site.register(Post, PostAdmin)

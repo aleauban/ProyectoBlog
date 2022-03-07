@@ -1,0 +1,34 @@
+{% extends "AppBlog/padre.html" %} 
+
+{% load static %}
+
+{% block ContenidoQueCambia %}
+
+<!-- Page Header-->
+<header class="masthead" style="background-image: url('assets/img/home-bg.jpg')">
+    <div class="container position-relative px-4 px-lg-5">
+        <div class="row gx-4 gx-lg-5 justify-content-center">
+            <div class="col-md-10 col-lg-8 col-xl-7">
+                <div class="site-heading">
+                    <h1>Listado de Perros</h1>
+                    <span class="subheading">Busca a tu mejor compañero</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+    <ul>
+        {% for post in object_list %}
+        <li>
+            <p>Raza: {{post.raza}} 
+        <li>
+            <p>Cualidad: {{post.cualidad}}</p>
+        
+            <p>
+                <a href="{% url 'Post/Detail' post.id %}">Leer más</a>
+            </p>
+        </li>
+        {% endfor %}
+
+{% endblock ContenidoQueCambia %}
